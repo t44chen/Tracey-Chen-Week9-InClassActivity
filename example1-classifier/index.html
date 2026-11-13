@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Week 9: Load an image classifier</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+    <!-- p5 supplies the canvas API; ml5 provides the image-classifier wrapper. -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ml5@1.2.1/dist/ml5.min.js"></script>
+    <!-- defer preserves this dependency order and waits until HTML parsing ends. -->
+    <script defer src="../shared/experience-state.js"></script>
+    <script defer src="../shared/camera-input.js"></script>
+    <script defer src="../shared/classifier-model.js"></script>
+    <script defer src="../shared/demo-ui.js"></script>
+    <script defer src="sketch.js"></script>
+  </head>
+  <body>
+    <main>
+      <a href="../index.html">Week 9 examples</a>
+      <h1>Example 1: Load the pretrained model</h1>
+      <p>The webcam supplies pixels. The model returns five class scores. No training happens here.</p>
+      <!-- IDs connect these controls/status elements to DemoUI and the sketch. -->
+      <div class="controls">
+        <button class="primary" id="start">Start webcam inference</button>
+        <button id="stop">Stop camera</button>
+      </div>
+      <p id="status" role="status" aria-live="polite">Loading libraries…</p>
+      <!-- p5 attaches its canvas here from setup(). -->
+      <div id="canvas-host"></div>
+      <p class="small note">
+        The square camera view is the model input. No recording or upload function is included. Library and model
+        loading still use network requests.
+      </p>
+    </main>
+  </body>
+</html>

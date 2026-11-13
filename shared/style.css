@@ -1,0 +1,111 @@
+/* Classroom interface: neutral chrome; colour belongs to the agent and scores. */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap");
+:root {
+  --paper: #f5f4ef;
+  --ink: #242625;
+  --muted: #525955;
+  --line: #c8cdc7;
+  --surface: #ffffff;
+  --accent: #175b4c;
+  --space-1: 0.35rem;
+  --space-2: 0.7rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    var(--text-base)/1.5 "Space Grotesk",
+    sans-serif;
+}
+main {
+  max-width: 1060px;
+  margin: auto;
+}
+h1 {
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  margin: var(--space-2) 0;
+}
+h2 {
+  font-size: var(--text-lg);
+}
+p {
+  margin: var(--space-2) 0 var(--space-3);
+  max-width: 78ch;
+}
+a {
+  color: var(--accent);
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block: var(--space-3);
+}
+button {
+  font: inherit;
+  border: 1px solid var(--ink);
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 3px;
+  cursor: pointer;
+}
+button.primary {
+  background: var(--accent);
+  color: white;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #1d77b5;
+  outline-offset: 3px;
+}
+#canvas-host {
+  border: 1px solid var(--line);
+  background: white;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}
+#status {
+  min-height: 3em;
+  padding: var(--space-2);
+  border-left: 4px solid var(--accent);
+}
+#design-controls {
+  padding-block: var(--space-2);
+}
+#design-controls[hidden] {
+  display: none;
+}
+.small {
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+.note {
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-3);
+}
+@media (max-width: 550px) {
+  body {
+    padding: var(--space-2);
+  }
+}

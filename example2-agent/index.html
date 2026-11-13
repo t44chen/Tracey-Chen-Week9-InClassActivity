@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Week 9: Shape and colour agent</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+    <!-- p5 draws the interface/agent; ml5 connects image pixels to the model. -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ml5@1.2.1/dist/ml5.min.js"></script>
+    <!-- Shared helpers must load before sketch.js, which calls their globals. -->
+    <script defer src="../shared/agent.js"></script>
+    <script defer src="../shared/experience-state.js"></script>
+    <script defer src="../shared/camera-input.js"></script>
+    <script defer src="../shared/classifier-model.js"></script>
+    <script defer src="../shared/demo-ui.js"></script>
+    <script defer src="sketch.js"></script>
+  </head>
+  <body>
+    <main>
+      <a href="../index.html">Week 9 examples</a>
+      <h1>Example 2: A shape and colour agent</h1>
+      <p>All five scores contribute to the character. Shape and colour are authored mappings, not detected emotions.</p>
+      <div class="controls">
+        <button class="primary" id="start">Start webcam inference</button>
+        <button id="stop">Stop camera</button>
+        <button id="design">Design test (no model)</button>
+      </div>
+      <p id="status" role="status" aria-live="polite">Loading libraries…</p>
+      <!-- DemoUI generates the per-label and mixed-score prototype controls here. -->
+      <div id="design-controls" class="controls" hidden></div>
+      <!-- p5 creates the canvas in this element. -->
+      <div id="canvas-host"></div>
+      <p class="small note">
+        Experiment with the score-responsive starter motion in getAgentMotion(). Bonus: train a real sixth class, disgust,
+        and extend the mappings. The design test is not model evidence.
+      </p>
+    </main>
+  </body>
+</html>

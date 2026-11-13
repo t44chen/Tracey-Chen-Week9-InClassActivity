@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GBDA 414: Week 9 workshop examples</title>
+    <!-- The landing page shares only the visual stylesheet; each example loads its own scripts. -->
+    <link rel="stylesheet" href="shared/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Week 9: Enacting a machine agent</h1>
+      <p>
+        Open the complete folder with VS Code and Live Server. The instructor must add the pretrained export to
+        <code>model/</code> before webcam inference can run. Example 2's design-test mode works without a model and is
+        explicitly labelled.
+      </p>
+      <!-- Example 1 focuses on interpreting classifier scores; Example 2 adds an authored visual response. -->
+      <h2><a href="example1-classifier/index.html">Example 1: Load the pretrained classifier</a></h2>
+      <p>See the square webcam input, every label and every class score.</p>
+      <h2><a href="example2-agent/index.html">Example 2: Blend the character's shape and colour</a></h2>
+      <p>
+        All scores contribute to one point-based outline and one RGB colour. Experiment with the score-responsive
+        motion; train and integrate disgust for the extension.
+      </p>
+      <!-- <p class="note">These are design experiments, not systems for determining anyone's emotional state.</p> -->
+    </main>
+  </body>
+</html>
